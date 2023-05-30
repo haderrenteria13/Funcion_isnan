@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practica 2 - Funcion IsNaN</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Fin Bootstrap CSS -->
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <!--Fin Google Fonts-->
+
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+  <!--Fin Font Awesome-->
+
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Fin Styles CSS -->
+</head>
+<body class="bg-negro tx-blanco">
+  <!-- Nav -->
+  <nav class="navbar contenedor pb-1 pt-1 sticky-top navbar-expand-lg bg-negro">
+    <div class="container">
+      <!--Logo Nav-->
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.png" alt="Logo Hader Renteria" height="85" width="85">
+      </a>
+      <!--Fin Logo Nav-->
+      <!--Icono Menu Responsive-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa fa-bars gradient"></i></span>
+      </button>
+      <!--Fin Icono Menu Responsive-->
+      <!--Menu-->
+      <div class="collapse navbar-collapse align-items-end justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav menu">
+          <li class="nav-item">
+            <a class="nav-link tx-blanco p-0 me-4" href="../src/blog.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <!--Fin Menu-->
+    </div>
+  </nav>
+  <!-- Fin Nav -->
+
+  <!-- Funcion SiNaN -->
+  <main>
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-lg-8 m-auto">
+          <div class="d-flex align-items-center justify-content-between mt-4">
+            <span class="d-flex">
+              <img src="hader.jpg" class="rounded-circle me-2" width="48">
+              <span class="ml-2">
+                <a href="#" class="d-block tx-blanco m-0 p-0 fw-bold text-decoration-none">Hader Renteria</a>
+                <span class="d-block text-muted fs-14 m-0 p-0">Frontend Developer</span>
+              </span>
+            </span>
+            <span class="ml-auto">
+              <a href="href="https://www.instagram.com/hader_renteria/" target="_blank" class="text-decoration-none me-1">
+                <i class="fab fa-instagram gradient"></i>
+              </a>
+              <a href="https://www.github.com/haderrenteria13/" target="_blank" class="text-decoration-none  me-1">
+                <i class="fab fa-github gradient"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/hader-renteria-565119240/" target="_blank" class="text-decoration-none">
+                <i class="fab fa-linkedin gradient"></i>
+              </a>
+            </span>
+          </div>
+
+          <!--Linea-->
+          <div class="mt-4">
+            <hr class="gradient-line">
+          </div>
+          <!--Linea-->
+
+          <div class="mt-4">
+            <h1 class="gradient fw-bold">Funcion SiNaN en JS</h1>
+            <div class="d-flex justify-content-between">
+              <p class="text-muted">Publicado el 30 de Mayo · 4 Minutos de Lectura</p>
+              <p class="text-muted">¿Ves algún Error?&nbsp;<a href="https://www.instagram.com/hader_renteria/" target="_blank" class="tx-rojo">Comunícamelo</a></p>
+            </div>
+            <div class="mt-4">
+              <h1 class="fw-bold fs-4 tx-blanco">isNaN (significa "Is Not a Number").</h1>
+              <p class="tx-blanco">Se utiliza en JavaScript para determinar si un valor no es un número. Toma un argumento y devuelve true si el valor no es un número y false si es un número o puede convertirse en uno.</p>
+              <h1 class="fw-bold fs-5 tx-blanco">Aquí algunos puntos clave sobre la función isNaN:</h1>
+              <div class="mt-4">
+                <label for="" class="fw-bold tx-blanco">Sintaxis:</label>
+                <img src="sintaxis.png" alt="" class="img-fluid">
+              </div>                             
+              <div class="mt-4">
+                <label for="" class="fw-bold tx-blanco">Ejemplos:</label>
+                <img src="ejemplos.png" alt="" class="img-fluid">
+                <div class="container">
+                  <h1>Verificador de números pares e impares</h1>
+                  <div class="form-group">
+                    <label for="numeroInput">Ingresa un número:</label>
+                    <input type="text" class="form-control" id="numeroInput">
+                  </div>
+                  <button type="button" class="btn btn-primary" onclick="verificarParImpar()">Verificar</button>
+                  <div id="resultado" class="mt-3"></div>
+                </div>
+              </div>
+              <h1 class="fw-bold fs-4 tx-blanco">Comportamiento:</h1>
+              <ul>
+                <li>Si el argumento pasado a isNaN no es un número o no se puede convertir en uno, la función devuelve true.</li>
+                <li>Si el argumento es un número o puede convertirse en uno, la función devuelve false.</li>
+                <li>La función también devuelve false para valores especiales como Infinity y -Infinity.</li>
+              </ul>
+              <h1 class="fw-bold fs-4 tx-blanco">Consideraciones:</h1>
+              <ul>
+                <li>isNaN intenta convertir su argumento en un número antes de realizar la comprobación. Si la conversión falla, se considera que el valor no es un número.</li>
+                <li>La función isNaN puede generar resultados inesperados para valores no numéricos que no son strings, como objetos o arreglos. En tales casos, es posible que desees utilizar métodos o enfoques específicos para realizar la validación.</li>
+              </ul>                             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Funcion SiNaN -->
+
+
+  
+
+  <!--Linea-->
+  <div class="container">
+    <hr class="gradient-line">
+  </div>
+  <!--Linea-->
+
+  <!--Footer-->
+  <footer class="d-flex contenedor pt-5 pb-0 h-100 footer bg-negro">
+    <div class="container align-self-center">
+      <div class="row mb-3">
+        <a href="#" class="col-lg-3 col-sm-6 my-4 logo-footer">
+          <img src="logo.png" alt="" />
+        </a>
+
+        <!--Columna 1-->
+        <div class="col-lg-3 col-sm-6 my-4">
+          <h5 class="fw-bold mb-3 tx-blanco">Home</h5>
+          <ul class="list-unstyled">
+            <li class="mb-1">
+              <a href="" class="text-muted text-decoration-none"
+                >Acerca de mí</a
+              >
+            </li>
+            <li class="mb-1">
+              <a href="" class="text-muted text-decoration-none"
+                >Contáctame</a
+              >
+            </li>
+            <li class="mb-1">
+              <a href="" class="text-muted text-decoration-none">Proyectos</a>
+            </li>
+          </ul>
+        </div>
+        <!--Fin Columna 1-->
+
+        <!--Columna 2-->
+        <div class="col-lg-3 col-sm-6 my-4">
+          <h5 class="fw-bold mb-3 tx-blanco">Evidencias</h5>
+          <ul class="list-unstyled">
+            <li class="mb-1">
+              <a
+                href="https://docs.google.com/document/d/1sqLwSy_Q5eLTpqxP39eaf5vfEv-BDRwEl8VjLPTVrk0/edit?usp=sharing"
+                class="text-muted text-decoration-none"
+                >Ir a Evidencias</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!--Fin Columna 2-->
+
+        <!--Columna 3-->
+        <div class="col-lg-3 col-sm-6 my-4">
+          <h5 class="fw-bold mb-3 tx-blanco">Contáctame</h5>
+          <div class="social-container">
+            <a
+              href="https://www.instagram.com/hader_renteria/"
+              class="social-link"
+              target="_blank"
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/hader-renteria-565119240/"
+              class="social-link"
+              target="_blank"
+            ></a>
+            <a
+              href="https://github.com/haderrenteria13"
+              class="social-link"
+              target="_blank"
+            ></a>
+          </div>
+        </div>
+        <!--Fin Columna 3-->
+      </div>
+    </div>
+  </footer>
+  <!--Fin Footer-->
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function verificarParImpar() {
+      var numero = document.getElementById('numeroInput').value;
+
+      if (isNaN(numero)) {
+        document.getElementById('resultado').innerHTML = 'El valor ingresado no es un número válido.';
+      } else {
+        if (numero % 2 === 0) {
+          document.getElementById('resultado').innerHTML = 'El número ' + numero + ' es par.';
+        } else {
+          document.getElementById('resultado').innerHTML = 'El número ' + numero + ' es impar.';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
